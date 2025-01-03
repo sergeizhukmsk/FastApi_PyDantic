@@ -17,3 +17,6 @@ async def get_user_by_username(
         username: Annotated[str, Path(min_length=5, max_length=20, title="Enter username", regex="^[a-zA-Z0-9_-]+$")],
         age: Annotated[int, Path(ge=18, le=120, title="Enter Age", description="Возраст должен быть положительным")]):
     return {"username": username, "age": age}
+
+# Чтобы запустить приложение, используйте команду:
+# uvicorn module_16_3:app --reload
