@@ -13,3 +13,7 @@ def create_user() -> User:
 	# Создаем нового пользователя
 	new_user = User(id=next_id, username=username, age=age)
 	# logging.debug('new_user - %s', new_user)
+
+# @app.exception_handler(Exception)
+# async def validation_exception_handler(request: Request, exc: Exception):
+# 	return JSONResponse(status_code=500, content={"message":f"An error occurred: {exc}"})

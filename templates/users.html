@@ -1,0 +1,27 @@
+{% extends 'main.html'%}
+{% block crud_container %}
+    {% if user_list %}
+        <h2 align="center"> В переданном списке один пользователь </h2>
+        <article class="card container fluid"></article>
+        <br>
+        <div class="card">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Id: {{ user_list[0]['id'] }}, Username: {{ user_list[0]['username'] }}, Age: {{
+                    user_list[0]['age'] }}</li>
+           </ul>
+        </div>
+    {% else %}
+        <section class="container-fluid">
+            <h2 align="center">В переданном списке {{ users_list|length }} пользователей</h2>
+            <br>
+            <div class="card">
+                <ul class="list-group list-group-flush">
+                    {% for user in users_list %}
+                        <li class="list-group-item">Id: {{ user.id }}, Username: {{ user.username }}, Age: {{
+                            user.age }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+    {% endif %}
+{% endblock %}
