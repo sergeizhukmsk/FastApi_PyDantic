@@ -6,9 +6,13 @@
         <br>
         <div class="card">
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">Id: {{ user_list[0]['id'] }}, Username: {{ user_list[0]['username'] }}, Age: {{
-                    user_list[0]['age'] }}</li>
-           </ul>
+                <li class="list-group-item">
+                    Id: {{ user_list[0]['id'] }},
+                    <a href="templates/user_card.html">Username: {{ user_list[0]['username']
+                        }}</a>,
+                    Age: {{ user_list[0]['age'] }}
+                </li>
+            </ul>
         </div>
     {% else %}
         <section class="container-fluid">
@@ -17,8 +21,11 @@
             <div class="card">
                 <ul class="list-group list-group-flush">
                     {% for user in users_list %}
-                        <li class="list-group-item">Id: {{ user.id }}, Username: {{ user.username }}, Age: {{
-                            user.age }}</li>
+                        <li class="list-group-item">
+                            Id: {{ user.id }},
+                            <a href="templates/user_card.html">Username: {{ user.username }}</a>,
+                            Age: {{ user.age }}
+                        </li>
                     {% endfor %}
                 </ul>
             </div>

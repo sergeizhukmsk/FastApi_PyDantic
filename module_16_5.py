@@ -1,18 +1,28 @@
 from fastapi import FastAPI, Request
-from fastapi.responses import HTMLResponse, JSONResponse
+from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 from fastapi.templating import Jinja2Templates
 
 
 # Создаем экземпляр приложения FastAPI
-app = FastAPI()
+app = FastAPI(debug=True)
 
 
 # Настраиваем Jinja2 для загрузки шаблонов из папки templates
 templates = Jinja2Templates(directory="templates")
 
 # Список пользователей
-users = []
+#users = []
+
+
+users = [{"id":5, "username":"UrbanUser - 3", "age":22},
+		 {"id":2, "username":"ZhukSergei", "age":62},
+		 {"id":3, "username":"UrbanUser - 1", "age":20},
+		 {"id":4, "username":"UrbanUser - 2", "age":21},
+		 {"id":1, "username":"SergeiZhuk", "age":62},
+		 {"id":6, "username":"UrbanUser - 4", "age":23},
+		 {"id":7, "username":"UrbanUser - 5", "age":24},
+		 {"id":8, "username":"UrbanUser - 6", "age":25}]
 
 
 class User(BaseModel):
